@@ -24,10 +24,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install glib dependencies
+      - name: Install GTK/GDK and GLib dependencies
         run: |
           sudo apt update
-          sudo apt install -y libglib2.0-dev libgirepository1.0-dev
+          sudo apt install -y libglib2.0-dev libgirepository1.0-dev libgtk-3-dev
 
       - name: Install pnpm
         run: |
