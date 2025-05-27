@@ -24,6 +24,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Install glib
+        run: |
+          apt update; apt install libglib2.0-dev libgirepository1.0-dev
+
       - name: Install pnpm
         run: |
           npm install -g pnpm
