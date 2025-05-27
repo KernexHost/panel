@@ -24,22 +24,23 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install glib
+      - name: Install glib dependencies
         run: |
-          sudo apt update; sudo apt install libglib2.0-dev libgirepository1.0-dev
+          sudo apt update
+          sudo apt install -y libglib2.0-dev libgirepository1.0-dev
 
       - name: Install pnpm
         run: |
           npm install -g pnpm
 
-      - name: Install dependencies
+      - name: Install project dependencies
         run: |
           pnpm install
 
-      - name: Build vue
+      - name: Build Vue frontend
         run: |
           pnpm build
 
-      - name: Build tauri
+      - name: Build Tauri application
         run: |
           pnpm tauri build
