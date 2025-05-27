@@ -24,11 +24,11 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install GTK/GDK, GLib, LibSoup and JavaScriptCore dependencies
+      - name: Install GTK/GDK, GLib, LibSoup, JavaScriptCore and WebKit2GTK dependencies
         run: |
           sudo apt update
-          sudo apt install -y libglib2.0-dev libgirepository1.0-dev libgtk-3-dev libsoup-3.0-dev libjavascriptcoregtk-4.1-dev
-
+          sudo apt install -y libglib2.0-dev libgirepository1.0-dev libgtk-3-dev libsoup-3.0-dev libjavascriptcoregtk-4.1-dev libwebkit2gtk-4.1-dev
+          
       - name: Install pnpm
         run: |
           npm install -g pnpm
