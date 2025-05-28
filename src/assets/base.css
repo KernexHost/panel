@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Lato";
+  src: url("Lato-Regular.ttf");
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "Lato";
+    overscroll-behavior: none;
+  }
+}
